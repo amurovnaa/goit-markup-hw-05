@@ -37,7 +37,6 @@ textarea,
 button {
   font-family: inherit;
   line-height: inherit;
-  border-color: transparent;
 }
 /*==================CONTAINER=====================*/
 
@@ -476,7 +475,7 @@ button {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 8px 24px;
-  max-width: 165px;
+  min-width: 165px;
   max-height: 40px;
   font-weight: 500;
   font-size: 16px;
@@ -486,6 +485,8 @@ button {
   align-items: center;
   justify-content: center;
   color: #fff;
+  cursor: pointer;
+  border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .subscribe-form-btn:hover,
@@ -640,7 +641,7 @@ button {
   display: flex;
   align-items: center;
 }
-.modal-checkbox-label span {
+.checkbox-icon {
   width: 16px;
   height: 16px;
   border-radius: 2px;
@@ -654,7 +655,7 @@ button {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-checkbox:checked + .modal-checkbox-label span {
+.modal-checkbox:checked + .modal-checkbox-label .checkbox-icon {
   background-color: #404bbf;
   border: 1px solid #404bbf;
   fill: #f4f4fd;
@@ -668,6 +669,7 @@ button {
 }
 .modal-btn {
   border-radius: 4px;
+  border: none;
   padding: 16px 32px;
   min-width: 169px;
   max-height: 56px;
@@ -678,9 +680,7 @@ button {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   margin: 0 auto;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
