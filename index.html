@@ -411,10 +411,12 @@
                 </ul>
             </div>
             <form class="footer-subscribe-form" name="subscribe_form" autocomplete="off">
-                <label class="subscribe-form-label">
-                    Subscribe
-                    <input class="subscribe-form-input" type="email" name="user_email" placeholder="E-mail" />
-                </label>
+                <div class="footer-form">
+                    <p class="form-text social-text">Subscribe</p>
+                    <label class="subscribe-form-label" for="user_email"></label>
+                    <input class="subscribe-form-input" type="email" name="user_email" id="user_email"
+                        placeholder="E-mail" />
+                </div>
                 <button class="subscribe-form-btn" type="submit">
                     Subscribe
                     <svg class="icon icon-btn-telegram" width="24" height="24">
@@ -424,7 +426,7 @@
             </form>
         </div>
     </footer>
-    <div class="backdrop is-open">
+    <div class="backdrop">
         <div class="modal">
             <button type="button" class="modal-open-btn">
                 <svg class="icon icon-close-modal" width="8" height="8">
@@ -464,6 +466,20 @@
                     <label class="modal-label" for="user_comment">Comment</label>
                     <textarea class="modal-input modal-textarea" name="user_comment" id="user_comment"
                         placeholder="Text input" rows="5"></textarea>
+                </div>
+                <div class="modal-field">
+                    <input class="modal-checkbox visually-hidden" type="checkbox" id="policy" name="policy"
+                        value="true" />
+                    <label class="modal-checkbox-label" for="policy">
+                        <span>
+                            <svg class="icon icon-check" width="10" height="8">
+                                <use href="./images/icons.svg#icon-check"></use>
+                            </svg>
+                        </span>
+                        I accept the terms and conditions of
+                        the Privacy
+                        Policy
+                    </label>
                 </div>
             </form>
             <button class="modal-btn" type="submit">Send</button>

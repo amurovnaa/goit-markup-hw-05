@@ -416,6 +416,7 @@ button {
   color: #fff;
   margin-bottom: 16px;
 }
+
 .footer-social-link-list {
   display: flex;
   align-items: center;
@@ -447,21 +448,11 @@ button {
 
 .footer-subscribe-form {
   display: flex;
-  flex-direction: row;
   gap: 24px;
   align-items: end;
 }
-.subscribe-form-label {
-  display: flex;
-  flex-direction: column;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #fff;
-}
+
 .subscribe-form-input {
-  margin-top: 16px;
   border: 1px solid #fff;
   border-radius: 4px;
   min-width: 264px;
@@ -515,12 +506,14 @@ button {
   z-index: 999;
   background-color: rgba(46, 47, 66, 0.4);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-open {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 .modal {
   width: 408px;
@@ -538,6 +531,7 @@ button {
 }
 .icon-close-modal {
   fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-open-btn {
   border-radius: 100%;
@@ -551,6 +545,15 @@ button {
   margin-left: auto;
   margin-bottom: 24px;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-open-btn:hover,
+.modal-open-btn:focus {
+  background-color: #404bbf;
+}
+.modal-open-btn:hover > .icon-close-modal,
+.modal-open-btn:focus > .icon-close-modal {
+  fill: #fff;
 }
 .modal-title {
   font-weight: 500;
@@ -562,7 +565,7 @@ button {
   margin-bottom: 16px;
 }
 .modal-form {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .modal-label {
@@ -585,6 +588,7 @@ button {
   min-height: 120px;
   resize: none;
   padding: 8px 0 8px 16px;
+  margin-bottom: 16px;
 }
 .modal-input::placeholder {
   font-size: 12px;
@@ -610,6 +614,31 @@ button {
 }
 .modal-input:focus-within + .modal-icon {
   fill: #4d5ae5;
+}
+.modal-checkbox-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: flex;
+  align-items: center;
+}
+.modal-checkbox-label span {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  transition: fill border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-checkbox:checked + .modal-checkbox-label span {
+  background-color: #404bbf;
+  border: 1px solid #404bbf;
+  fill: #f4f4fd;
 }
 .modal-btn {
   border-radius: 4px;
